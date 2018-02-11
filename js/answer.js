@@ -23,7 +23,18 @@ var userInput = "";
         }, {
             "brand": "92553f8122d8741804f476b3a9a1423d",
             "logo": "Brands/1u.jpg"
+        },
+         {
+            "brand": "d9eaabe53adedb62bc74b7eb0a9477d4",
+            "logo": "Brands/z1 (2).jpg"
         }, {
+            "brand": "2d0d4809e6bdb6f4db3e547f27b1873c",
+            "logo": "Brands/z1 (1).jpg"
+        }, {
+            "brand": "e206a54e97690cce50cc872dd70ee896",
+            "logo": "Brands/lx.png"
+        },
+         {
             "brand": "5deb800ce9500e72e355137ab8b48fb6",
             "logo": "Brands/1a.png"
         }, {
