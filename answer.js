@@ -25,11 +25,12 @@ var userInput = "";
         }, ];
 
 function start(index,score) {
-    document.getElementsByClassName("logo")[0].setAttribute("src", logos[index].logo);
+    if(index != undefined)
+    {document.getElementsByClassName("logo")[0].setAttribute("src", logos[index].logo);
     document.getElementById("user-try").style.color = "#fc3";
     document.getElementById("user-try").style.borderBottom = "2px solid #fc3";
     document.getElementById("user-try").value = ""; 
-    document.getElementsByClassName("scor-count")[0].innerHTML = score.toString();
+    document.getElementsByClassName("scor-count")[0].innerHTML = score.toString();}
 }
 
 function check() {
@@ -42,22 +43,21 @@ function check() {
             if (index == logos.length) {
                     alert("Wow! You solved all logos! ");
                     gameOver(score);
-                    start(0,0);
-                }
-                index = (index) % logos.length;
-                // console.log(index);
-                score += 5;
-                document.getElementsByClassName("scor-count")[0].innerHTML = score.toString();
-                setTimeout(start, 1000);
-                start(index,score);
-            } else {
-                //wrong
-                document.getElementById("user-try").style.color = "red";
-                document.getElementById("user-try").style.borderBottom = "2px solid red";
-                alert("Ooh! it's gameOver! ");                
-                gameOver(score);
-                start(0,0);
+                    score-=5;
             }
+            index = (index) % logos.length;
+            // console.log(index);
+            score += 5;
+            document.getElementsByClassName("scor-count")[0].innerHTML = score.toString();
+            setTimeout(start, 1000);
+            start(index,score);
+    } 
+    else {
+            //wrong
+            alert("Ooh! it's gameOver! ");                
+            gameOver(score);
+            start(0,0);
+    }
 }
 start(index,score);
 
