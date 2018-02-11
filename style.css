@@ -1,0 +1,28 @@
+.main-page {
+            text-align: center;
+            padding-top: 2%;
+        }
+        
+        .game-body {
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+        
+        input {
+            margin: 10px;
+            width: 40%;
+            height: 8%;
+            border: none;
+            border-bottom: 2px solid #fc3;
+            color: #fc3;
+            font-size: 24px;
+            text-align: center;
+        }
+        
+        input:focus {
+            outline: none;
+        }
