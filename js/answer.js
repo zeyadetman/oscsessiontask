@@ -159,7 +159,7 @@ function listFiller(arr){
     sortedData.sort((a,b)=>{return b[1] - a[1];});
     //console.log(sortedData);
     for(var i=0;i<sortedData.length;i++){
-        document.getElementById('scoreslist').innerHTML += `<li style="padding:5px;"><img src="https://openclipart.org/image/800px/svg_to_png/215819/Linux-Avatar.png" style="width:24px; height:24px; border-radius:50% !important; padding: 0 5px 0 5px;"><p style="display:inline;">${sortedData[i][0]}</p>
+        document.getElementById('scoreslist').innerHTML += `<li style="padding:5px;"><img src="avatar.png" style="width:24px; height:24px; border-radius:50% !important; padding: 0 5px 0 5px;"><p style="display:inline;">${sortedData[i][0]}</p>
         <b>${sortedData[i][1]}</b></li>
         `;
     }
