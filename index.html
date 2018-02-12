@@ -7,19 +7,29 @@
 </head>
 
 <body>
-    <div class="main-page">
-        <div class="game-body">
-            <img class="logo" style="width:40%;">
-            <input id="user-try" type="text">
+    <img class="osc" src="oscLogo.png">
+    <div class="total-window">
+        <div class="main-page">
+            <div class="game-body">
+                <img class="logo" style="width:40%; max-height: 50%;">
+                <input id="user-try" type="text">
+            </div>
+            <div class="controls">
+                <button class="control-btn" onclick="check()">Check</button>
+            </div>
+            <div class="score">
+                <img src="star.png">
+                <p>score: </p>
+                <p class="scor-count">0</p>
+            </div>
         </div>
-        <div class="controls">
-            <button class="control-btn" onclick="check()">Check</button>
-            <p class="status"></p>
+        <div class="score-list">
+            <h2 style="text-align: center;">Score List</h2>
+            <ol id="scoreslist">
+            </ol>
         </div>
-        <div class="score">
-            <p class="scor-count">0</p>
-        </div>
+        <div class="clear-fix"></div>
     </div>
-    <script src="js/md5.min.js"></script>
+    <script src="js/md5.min.js"></script>    
     <script src="js/answer.js"></script>
 </body>

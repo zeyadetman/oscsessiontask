@@ -133,6 +133,8 @@ function gameOver(pScore){
     localStorage.setItem(player,pScore);
     index=0;
     score=0;
+    document.getElementById('scoreslist').innerHTML = "";
+    listFiller(window.localStorage);
 }
 
 document.onkeydown = function (e) {
@@ -143,3 +145,17 @@ document.onkeydown = function (e) {
             break;
   }
 }
+//
+//
+function listFiller(arr){
+    console.log(arr.length);
+    for (var key in arr) {
+        console.log(key, arr[key]);
+        if(key != "key" && key != "getItem" && key != "setItem" && key != "removeItem" && key != "clear" && key != "length")
+        document.getElementById('scoreslist').innerHTML += `<li style="padding:5px;"><img src="https://openclipart.org/image/800px/svg_to_png/215819/Linux-Avatar.png" style="width:24px; height:24px; border-radius:50% !important; padding: 0 5px 0 5px;"><p style="display:inline;">${key}</p>
+        <b>${arr[key]}</b></li>
+        `;
+    }
+}
+
+listFiller(window.localStorage);
