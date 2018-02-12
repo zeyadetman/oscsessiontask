@@ -102,7 +102,7 @@ function start(index,score) {
 
 function check() {
     userInput = document.getElementById("user-try").value.toLowerCase();
-    console.log(index);
+    //console.log(index);
     if (md5(userInput).toString() == logos[index].brand) {
             document.getElementById("user-try").style.color = "green";
             document.getElementById("user-try").style.borderBottom = "2px solid green";
@@ -148,14 +148,22 @@ document.onkeydown = function (e) {
 //
 //
 function listFiller(arr){
-    console.log(arr.length);
+    var sortedData = [];
+    //console.log(arr.length);
     for (var key in arr) {
-        console.log(key, arr[key]);
-        if(key != "key" && key != "getItem" && key != "setItem" && key != "removeItem" && key != "clear" && key != "length")
-        document.getElementById('scoreslist').innerHTML += `<li style="padding:5px;"><img src="https://openclipart.org/image/800px/svg_to_png/215819/Linux-Avatar.png" style="width:24px; height:24px; border-radius:50% !important; padding: 0 5px 0 5px;"><p style="display:inline;">${key}</p>
-        <b>${arr[key]}</b></li>
+        //console.log(key, arr[key]);
+        if(key != "key" && key != "getItem" && key != "setItem" && key != "removeItem" && key != "clear" && key != "length"){
+            sortedData.push([key, arr[key]*1]);
+        }
+    }
+    sortedData.sort((a,b)=>{return b[1] - a[1];});
+    //console.log(sortedData);
+    for(var i=0;i<sortedData.length;i++){
+        document.getElementById('scoreslist').innerHTML += `<li style="padding:5px;"><img src="https://openclipart.org/image/800px/svg_to_png/215819/Linux-Avatar.png" style="width:24px; height:24px; border-radius:50% !important; padding: 0 5px 0 5px;"><p style="display:inline;">${sortedData[i][0]}</p>
+        <b>${sortedData[i][1]}</b></li>
         `;
     }
+
 }
 
 listFiller(window.localStorage);
